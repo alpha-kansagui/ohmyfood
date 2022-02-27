@@ -1,0 +1,22 @@
+{
+  "name": "p3_sow_alpha_code",
+  "version": "1.0.0",
+  "description": "projet3 ohmyfood",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alpha-kansagui/ohmyfood.git"
+  },
+  "author": "Alpha Sow",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alpha-kansagui/ohmyfood/issues"
+  },
+  "homepage": "https://github.com/alpha-kansagui/ohmyfood#readme",
+  "devDependencies": {
+    "sass": "^1.49.9"
+  }
+}
