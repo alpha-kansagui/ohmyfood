@@ -3,6 +3,7 @@
 ::after {
   box-sizing: border-box;
 }
+
 .flex-centre {
   display: flex;
   justify-content: center;
@@ -12,19 +13,24 @@
 .couleur-primaire {
   color: #9356dc;
 }
+
 .couleur-secondaire {
   color: #ff79da;
 }
+
 .couleur-tertiaire {
   color: #99e2d0;
 }
+
 .arrierePlan-gris {
   background-color: #f2f2f2;
 }
+
 body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
 }
+
 /*Header*/
 .logo {
   font-family: Shrikhand, cursive;
@@ -33,13 +39,16 @@ body {
   padding: 5px;
   position: relative;
 }
+
 /*Main*/
 .localisation {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 16px;
+  background-color: arrierePlan-gris;
 }
+
 /*Section*/
 .exploration {
   text-align: center;
@@ -54,7 +63,17 @@ body {
   color: white;
   font-weight: bold;
   background-image: linear-gradient(to top, #9356dc, #ff79da);
-  font-size: 32px;
+  font-size: 18px;
+  padding: 16px;
   border-radius: 32px;
   border: none;
+  box-shadow: 2px 1px 16px -3px;
+  transition: transforme 200ms;
+  margin-top: 16px;
 }
+.exploration button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=styles.css.map */
