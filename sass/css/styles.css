@@ -1,13 +1,14 @@
+/*
+@import ".sass/utils/mixins";
+@import ".sass/base/typography";
+@import ".sass/layout/main";
+@import ".sass/layout/footer";
+*/
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
 *,
 ::before,
 ::after {
   box-sizing: border-box;
-}
-
-.flex-centre {
-  display: flex;
-  justify-content: center;
-  align-items: center;
 }
 
 .couleur-primaire {
@@ -47,6 +48,7 @@ body {
   align-items: center;
   gap: 16px;
   background-color: arrierePlan-gris;
+  padding: 18px;
 }
 
 /*Section*/
@@ -74,6 +76,30 @@ body {
 .exploration button:hover {
   transform: scale(1.02);
   opacity: 0.9;
+}
+
+/*fonctionnement*/
+.fonction ol {
+  display: flex;
+}
+@media (max-width: 768) {
+  .fonction ol {
+    flex-direction: column;
+  }
+}
+.fonction li {
+  background-color: #f6f6f6;
+  padding: 24px 32px;
+  border: 1px solid red;
+  flex-grow: 1;
+  border-radius: 16px;
+  box-shadow: 2px 1px 16px -3px #000;
+}
+.fonction li:hover {
+  transform: scale(1.02);
+}
+.fonction li i.fas {
+  margin-right: 16px;
 }
 
 /*# sourceMappingURL=styles.css.map */
