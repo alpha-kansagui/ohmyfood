@@ -1,0 +1,76 @@
+/*Main*/
+.localisation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: arrierePlan-gris;
+  padding: 18px;
+}
+/*Section*/
+.exploration {
+  text-align: center;
+
+  h1 {
+    font-size: 40px;
+  }
+  p {
+    font-size: 20px;
+  }
+  button {
+    color: white;
+    font-weight: bold;
+    background-image: linear-gradient(to top, #9356dc, #ff79da);
+    font-size: 18px;
+    padding: 16px;
+    border-radius: 32px;
+    border: none;
+    box-shadow: 2px 1px 16px -3px;
+    transition: transforme 200ms;
+    margin-top: 16px;
+  }
+  button:hover {
+    transform: scale(1.02);
+    opacity: 0.9;
+  }
+}
+/*fonctionnement*/
+.fonction {
+  counter-reset: section;
+  & ol {
+    display: flex;
+    gap: 32px;
+    @media (max-width: 768) {
+      flex-direction: column;
+    }
+  }
+  & li {
+    /*position: relative;*/
+    & ::before {
+      content: counter(section);
+      counter-increment: section;
+      color: white;
+      background-color: #9356dc;
+      width: 32px;
+      height: 32px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      position: absolute;
+      bottom: 16px;
+      left: -16px;
+    }
+    list-style-type: none;
+    background-color: #f6f6f6;
+    padding: 24px 32px;
+    flex-grow: 1;
+    border-radius: 16px;
+    box-shadow: 2px 1px 16px -3px #000;
+    &:hover {
+      transform: scale(1.02);
+    }
+    & i.fas {
+      margin-right: 16px;
+    }
+  }
+}
