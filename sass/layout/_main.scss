@@ -39,10 +39,8 @@
   counter-reset: section;
   & ol {
     display: flex;
+    flex-wrap: wrap;
     gap: 32px;
-    @media (max-width: 768) {
-      flex-direction: column;
-    }
   }
   & li {
     /*position: relative;*/
@@ -72,5 +70,25 @@
     & i.fas {
       margin-right: 16px;
     }
+  }
+}
+/*Restaurants*/
+.menu {
+  background-color: #f6f6f6;
+  & h2 {
+    margin-bottom: 32px;
+  }
+  & .menu_cartes {
+    display: grid;
+    grid-template-columns: (1, 1fr);
+    gap: 32px;
+  }
+  & .cartes {
+    border: 1px solid black;
+  }
+  & .cartes_image {
+    background-image: url(../images/restaurant_1.jpg);
+    height: 15rem;
+    background-size: cover;
   }
 }
