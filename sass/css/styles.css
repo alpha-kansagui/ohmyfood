@@ -92,14 +92,15 @@ body {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: 16px;
-  left: -16px;
+  bottom: -8pxpx;
+  left: -50px;
 }
 .fonction li:hover {
   transform: scale(1.02);
 }
 .fonction li i.fas {
   margin-right: 16px;
+  position: relative;
 }
 
 /*Restaurants*/

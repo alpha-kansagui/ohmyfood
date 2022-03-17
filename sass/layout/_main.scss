@@ -55,8 +55,8 @@
       place-items: center;
       border-radius: 50%;
       position: absolute;
-      bottom: 16px;
-      left: -16px;
+      bottom: -8px;
+      left: -50px;
     }
     list-style-type: none;
     background-color: #f6f6f6;
@@ -69,6 +69,7 @@
     }
     & i.fas {
       margin-right: 16px;
+      position: relative;
     }
   }
 }
