@@ -92,7 +92,7 @@ body {
   place-items: center;
   border-radius: 50%;
   position: absolute;
-  bottom: -8pxpx;
+  bottom: -8px;
   left: -50px;
 }
 .fonction li:hover {
