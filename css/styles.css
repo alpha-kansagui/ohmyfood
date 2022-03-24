@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-body {
-  margin: 0px;
-  font-family: "Roboto", sans-serif;
-}
-
 /*
 .wrapper {
   max-width: 768px;
@@ -17,6 +12,16 @@ body {
   padding: 0 20px;
 }
 */
+body {
+  margin: 0px;
+  font-family: "Roboto", sans-serif;
+}
+
+h2 {
+  padding: 32px 0;
+  margin: 0;
+}
+
 /*Header*/
 .logo {
   font-family: Shrikhand, cursive;
@@ -73,7 +78,7 @@ body {
   gap: 32px;
 }
 .fonction li {
-  /*position: relative;*/
+  position: relative;
   list-style-type: none;
   background-color: #f6f6f6;
   padding: 24px 32px;
@@ -107,21 +112,42 @@ body {
 .menu {
   background-color: #f6f6f6;
 }
-.menu h2 {
-  margin-bottom: 32px;
-}
 .menu .menu_cartes {
   display: grid;
   grid-template-columns: 1, 1fr;
   gap: 32px;
 }
-.menu .cartes {
-  border: 1px solid black;
+.menu .new {
+  border: 1px solid red;
+  position: relative;
+}
+.menu .new::before {
+  content: "Nouveau";
+  position: absolute;
+  height: 2rem;
+  width: 5rem;
+  background-color: #99e2d0;
+  text-decoration: none;
+  color: #1b6150;
+  border-radius: 3px;
+  text-align: center;
 }
 .menu .cartes_image {
-  background-image: url(../../images/restaurant_1.jpg);
   height: 15rem;
+  border-radius: 2rem;
   background-size: cover;
+}
+.menu .cartes_image-1 {
+  background-image: url(../../images/restaurant_1.jpg);
+}
+.menu .cartes_image-2 {
+  background-image: url(../../images/restaurant_2.jpg);
+}
+.menu .cartes_image-3 {
+  background-image: url(../../images/restaurant_3.jpg);
+}
+.menu .cartes_image-4 {
+  background-image: url(../../images/restaurant_4.jpg);
 }
 
 /*# sourceMappingURL=styles.css.map */

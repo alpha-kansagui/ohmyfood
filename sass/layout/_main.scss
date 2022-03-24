@@ -55,8 +55,8 @@
       place-items: center;
       border-radius: 50%;
       position: absolute;
-      /*bottom: -8px;
-      left: -50px;*/
+      bottom: -8px;
+      left: -50px;
     }
     list-style-type: none;
     background-color: #f6f6f6;
@@ -81,13 +81,31 @@
     grid-template-columns: (1, 1fr);
     gap: 32px;
   }
-  & .cartes {
-    border: 1px solid black;
+  .new {
+    border: 1px solid red;
+    position: relative;
   }
-  & .cartes_image {
-    background-image: url(../../images/restaurant_1.jpg);
-    height: 15rem;
-    border-radius: 3rem;
-    background-size: cover;
+  .new::before {
+    content: "Nouveau";
+    position: absolute;
+    height: 2rem;
+    width: 5rem;
+    background-color: #99e2d0;
+    text-decoration: none;
+    color: darken(#99e2d0, 50%);
+    border-radius: 3px;
+    text-align: center;
+  }
+  & .cartes {
+    &_image {
+      height: 15rem;
+      border-radius: 2rem;
+      background-size: cover;
+    }
+    @for $i from 1 through 4 {
+      &_image-#{$i} {
+        background-image: url(../../images/restaurant_#{$i}.jpg);
+      }
+    }
   }
 }
