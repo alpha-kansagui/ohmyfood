@@ -82,7 +82,6 @@
     gap: 32px;
   }
   .new {
-    border: 1px solid red;
     position: relative;
   }
   .new::before {
@@ -94,13 +93,29 @@
     text-decoration: none;
     color: darken(#99e2d0, 50%);
     border-radius: 3px;
-    text-align: center;
+    display: grid;
+    place-items: center;
+    right: 16px;
+    top: 16px;
   }
   & .cartes {
     &_image {
       height: 15rem;
-      border-radius: 2rem;
+      border-radius: 16px 16px 0 0;
       background-size: cover;
+    }
+    &_description {
+      position: relative;
+      h3,
+      p {
+        margin: 8px;
+      }
+      i {
+        position: absolute;
+        right: 16px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
     }
     @for $i from 1 through 4 {
       &_image-#{$i} {

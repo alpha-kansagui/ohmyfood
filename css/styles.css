@@ -22,6 +22,20 @@ h2 {
   margin: 0;
 }
 
+h3,
+p {
+  margin: 0;
+}
+
+h3 {
+  padding-top: 8px;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /*Header*/
 .logo {
   font-family: Shrikhand, cursive;
@@ -118,7 +132,6 @@ h2 {
   gap: 32px;
 }
 .menu .new {
-  border: 1px solid red;
   position: relative;
 }
 .menu .new::before {
@@ -130,12 +143,28 @@ h2 {
   text-decoration: none;
   color: #1b6150;
   border-radius: 3px;
-  text-align: center;
+  display: grid;
+  place-items: center;
+  right: 16px;
+  top: 16px;
 }
 .menu .cartes_image {
   height: 15rem;
-  border-radius: 2rem;
+  border-radius: 16px 16px 0 0;
   background-size: cover;
+}
+.menu .cartes_description {
+  position: relative;
+}
+.menu .cartes_description h3,
+.menu .cartes_description p {
+  margin: 8px;
+}
+.menu .cartes_description i {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .menu .cartes_image-1 {
   background-image: url(../../images/restaurant_1.jpg);
