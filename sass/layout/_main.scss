@@ -36,6 +36,7 @@
 }
 /*fonctionnement*/
 .fonction {
+  padding: 0 32px;
   counter-reset: section;
   & ol {
     display: flex;
@@ -75,7 +76,9 @@
 }
 /*Restaurants*/
 .menu {
+  padding: 0 32px;
   background-color: #f6f6f6;
+  padding-bottom: 64px;
   & .menu_cartes {
     display: grid;
     grid-template-columns: (1, 1fr);
@@ -106,15 +109,29 @@
     }
     &_description {
       position: relative;
+      background-color: white;
+      border-radius: 0 0 16px 16px;
       h3,
       p {
-        margin: 8px;
+        padding: 8px;
       }
       i {
         position: absolute;
         right: 16px;
         top: 50%;
         transform: translateY(-50%);
+      }
+      .fas {
+        color: transparent;
+        background-image: linear-gradient(to top, #9356dc, #ff79da);
+        background-clip: text;
+        -webkit-background-clip: text;
+        opacity: 0;
+        transition: all 200ms ease-in-out;
+      }
+      &:hover .fas {
+        opacity: 1;
+        transform: translateY(-50%) scale(1.2);
       }
     }
     @for $i from 1 through 4 {

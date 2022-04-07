@@ -84,6 +84,7 @@ a {
 
 /*fonctionnement*/
 .fonction {
+  padding: 0 32px;
   counter-reset: section;
 }
 .fonction ol {
@@ -124,7 +125,9 @@ a {
 
 /*Restaurants*/
 .menu {
+  padding: 0 32px;
   background-color: #f6f6f6;
+  padding-bottom: 64px;
 }
 .menu .menu_cartes {
   display: grid;
@@ -155,16 +158,30 @@ a {
 }
 .menu .cartes_description {
   position: relative;
+  background-color: white;
+  border-radius: 0 0 16px 16px;
 }
 .menu .cartes_description h3,
 .menu .cartes_description p {
-  margin: 8px;
+  padding: 8px;
 }
 .menu .cartes_description i {
   position: absolute;
   right: 16px;
   top: 50%;
   transform: translateY(-50%);
+}
+.menu .cartes_description .fas {
+  color: transparent;
+  background-image: linear-gradient(to top, #9356dc, #ff79da);
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.menu .cartes_description:hover .fas {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
 }
 .menu .cartes_image-1 {
   background-image: url(../../images/restaurant_1.jpg);
@@ -177,6 +194,17 @@ a {
 }
 .menu .cartes_image-4 {
   background-image: url(../../images/restaurant_4.jpg);
+}
+
+footer {
+  background-color: #353535;
+  padding: 16px 32px;
+  color: white;
+}
+footer h2 {
+  font-family: "shrikhand", "sans-serif";
+  font-weight: 400;
+  padding: 16px 0;
 }
 
 /*# sourceMappingURL=styles.css.map */
