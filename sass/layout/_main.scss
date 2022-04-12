@@ -119,22 +119,7 @@
       position: relative;
       background-color: white;
       border-radius: 0 0 16px 16px;
-      &::before {
-        @include mixins.coeur;
-      }
-      &::after {
-        @include mixins.coeur;
-        @include mixins.gradient(1);
-        @include mixins.coeur(
-          $opacity: 0,
-          $font-weight: 900,
-          $color: transparent
-        );
-      }
-      &:hover::after {
-        opacity: 1;
-        transform: translateY(-50%) scale(1.2);
-      }
+      @include mixins.animation_coeur;
       h3,
       p {
         padding: 8px;

@@ -25,3 +25,17 @@
   opacity: $opacity;
   transition: all 200ms ease-in-out;
 }
+@mixin animation_coeur {
+  &::before {
+    @include coeur;
+  }
+  &::after {
+    @include coeur;
+    @include gradient(1);
+    @include coeur($opacity: 0, $font-weight: 900, $color: transparent);
+  }
+  &:hover::after {
+    opacity: 1;
+    transform: translateY(-50%) scale(1.2);
+  }
+}
