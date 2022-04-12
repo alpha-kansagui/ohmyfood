@@ -1,3 +1,8 @@
+.images {
+  position: absolute;
+  width: 100%;
+  z-index: -1000;
+}
 .images img {
   display: block;
   width: 100%;
@@ -6,13 +11,14 @@
 }
 
 .restaurant {
-  background-color: f6f6f6;
+  margin-top: 268px;
+  background-color: #f6f6f6;
+  border-radius: 32px 32px 0 0;
 }
 .restaurant h2 {
   position: relative;
   padding: 32px 16px;
   font-family: "shrikhand", "sans-serif";
-  border-radius: 32px 32px;
 }
 .restaurant h2::before {
   display: inline-block;
