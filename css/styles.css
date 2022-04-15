@@ -281,13 +281,13 @@ footer p {
 
 .restaurant {
   margin-top: 268px;
-  background-color: #f6f6f6;
-  border-radius: 32px 32px 0 0;
 }
 .restaurant h2 {
   position: relative;
   padding: 32px 16px;
   font-family: "shrikhand", "sans-serif";
+  background-color: #f6f6f6;
+  border-radius: 32px 32px 0 0;
 }
 .restaurant h2::before {
   display: inline-block;
@@ -353,17 +353,29 @@ footer p {
   transform: translateY(-50%) scale(1.2);
 }
 
+.resto-main {
+  padding: 0 16px;
+  background-color: #f6f6f6;
+}
+
 .menu_grid {
-  background-color: yellow;
   display: grid;
   gap: 16px;
   grid-template-columns: 1fr;
 }
-.menu_grid > * {
+.menu_grid .menu_categories {
   border: 1px solid red;
+  background-color: white;
 }
-.menu_grid .resto-main {
-  padding: 0 16px;
+.menu_grid .menu_categories .menu-items_desciption {
+  display: flex;
+  align-items: center;
+  padding: 16px;
+  border-radius: 16px;
+}
+.menu_grid .menu_categories .menu-items_desciption .prix {
+  margin-left: auto;
+  font-weight: 900;
 }
 
 /*# sourceMappingURL=styles.css.map */
