@@ -238,16 +238,16 @@ a {
   margin-left: 8px;
 }
 .menu .cartes_image-1 {
-  background-image: url(../../images/restaurant_1.jpg);
+  background-image: url(../images/restaurant_1.jpg);
 }
 .menu .cartes_image-2 {
-  background-image: url(../../images/restaurant_2.jpg);
+  background-image: url(../images/restaurant_2.jpg);
 }
 .menu .cartes_image-3 {
-  background-image: url(../../images/restaurant_3.jpg);
+  background-image: url(../images/restaurant_3.jpg);
 }
 .menu .cartes_image-4 {
-  background-image: url(../../images/restaurant_4.jpg);
+  background-image: url(../images/restaurant_4.jpg);
 }
 
 footer {

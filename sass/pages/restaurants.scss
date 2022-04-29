@@ -38,7 +38,7 @@
     &::after {
       content: "";
       position: absolute;
-      background-color: #99e2d0;
+      background-color: $couleur-tertiaire;
       top: 2.5rem;
       left: 0;
       height: 0.25rem;
@@ -88,7 +88,7 @@
           aspect-ratio: 1;
           width: 1.5rem;
           border-radius: 1rem;
-          color: #99e2d0;
+          color: $couleur-tertiaire;
         }
       }
       &:hover {

@@ -51,7 +51,7 @@
       content: counter(section);
       counter-increment: section;
       color: white;
-      background-color: #9356dc;
+      background-color: $couleur-primaire;
       width: 32px;
       height: 32px;
       display: grid;
@@ -74,7 +74,7 @@
       transform: scale(1.02);
       background-color: rgba(146, 86, 221, 0.2);
       ::before {
-        color: #9356dc;
+        color: $couleur-primaire;
       }
     }
     & i.fas {
@@ -101,9 +101,9 @@
     position: absolute;
     height: 2rem;
     width: 5rem;
-    background-color: #99e2d0;
+    background-color: $couleur-tertiaire;
     text-decoration: none;
-    color: darken(#99e2d0, 50%);
+    color: darken($couleur-tertiaire, 50%);
     border-radius: 3px;
     display: grid;
     place-items: center;
@@ -129,7 +129,7 @@
     }
     @for $i from 1 through 4 {
       &_image-#{$i} {
-        background-image: url(../../images/restaurant_#{$i}.jpg);
+        background-image: url(../images/restaurant_#{$i}.jpg);
       }
     }
   }
