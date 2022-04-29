@@ -5,6 +5,9 @@
     rgba(225, 121, 218, $opacity)
   );
 }
+@mixin box-shadow {
+  box-shadow: 2px 1px 8px -3px #000;
+}
 @mixin coeur($opacity: 1, $font-weight: 400, $color: inherit) {
   display: inline-block;
   font-style: normal;

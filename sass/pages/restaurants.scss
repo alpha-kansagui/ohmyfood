@@ -1,4 +1,6 @@
 @use "../utils/mixins";
+@use "../utils/animation";
+
 .images {
   position: absolute;
   width: 100%;
@@ -25,21 +27,78 @@
   padding: 0 16px;
   background-color: #f6f6f6;
 }
-.menu_grid {
+.menu_resto {
   display: grid;
-  gap: 16px;
   grid-template-columns: 1fr;
+  gap: 16px;
+  h3 {
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      background-color: #99e2d0;
+      top: 2.5rem;
+      left: 0;
+      height: 0.25rem;
+      width: 3rem;
+    }
+  }
   .menu_categories {
-    border: 1px solid red;
-    background-color: white;
-    .menu-items_desciption {
+    overflow: hidden;
+    .menu_item {
+      background-color: white;
       display: flex;
-      align-items: center;
-      padding: 16px;
+      overflow: hidden;
       border-radius: 16px;
+      margin: 8px;
+      @include mixins.box-shadow;
       .prix {
         margin-left: auto;
         font-weight: 900;
+        padding: 16px;
+        display: flex;
+        align-items: flex-end;
+      }
+      .menu_item_description {
+        padding: 16px;
+        overflow: hidden;
+        h4,
+        p {
+          overflow: hidden;
+          white-space: nowrap;
+          text-overflow: ellipsis;
+        }
+      }
+      .check {
+        display: grid;
+        place-items: center;
+        flex-shrink: 0;
+        $button_width: 4rem;
+        border-radius: 0 16px 16px 0;
+        background-color: aquamarine;
+        margin-right: -1 * $button_width;
+        width: $button_width;
+        transition: margin-right 0.5s;
+        i {
+          display: grid;
+          place-items: center;
+          background: white;
+          aspect-ratio: 1;
+          width: 1.5rem;
+          border-radius: 1rem;
+          color: #99e2d0;
+        }
+      }
+      &:hover {
+        .check {
+          margin-right: 0;
+        }
+        i {
+          @include animation.quart-tour;
+          animation: quart-tour 0.5s ease-in-out;
+        }
       }
     }
   }
