@@ -75,6 +75,8 @@ a {
   box-shadow: 2px 1px 16px -3px;
   transition: transforme 200ms;
   margin-top: 16px;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #000;
   background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(225, 121, 218, 0.9));
 }
 .exploration button:hover {
@@ -172,6 +174,7 @@ a {
 }
 .menu .cartes_description::before {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -179,7 +182,6 @@ a {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -192,6 +194,7 @@ a {
 }
 .menu .cartes_description::after {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -199,7 +202,6 @@ a {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -211,6 +213,7 @@ a {
   transition: all 200ms ease-in-out;
   background-image: linear-gradient(to top, #9356dc, #e179da);
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -218,7 +221,6 @@ a {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -267,6 +269,21 @@ footer p {
   line-height: 1.8em;
 }
 
+header::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f060";
+  left: 16px;
+  transform: translateY(50%);
+  font-size: 20px;
+}
+
 .images {
   position: absolute;
   width: 100%;
@@ -291,6 +308,7 @@ footer p {
 }
 .restaurant h2::before {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -298,7 +316,6 @@ footer p {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -311,6 +328,7 @@ footer p {
 }
 .restaurant h2::after {
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -318,7 +336,6 @@ footer p {
   font-family: "Font Awesome 5 Free";
   font-weight: 400;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -330,6 +347,7 @@ footer p {
   transition: all 200ms ease-in-out;
   background-image: linear-gradient(to top, #9356dc, #e179da);
   display: inline-block;
+  position: absolute;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
@@ -337,7 +355,6 @@ footer p {
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   content: "\f004";
-  position: absolute;
   right: 16px;
   top: 50%;
   font-size: 24px;
@@ -424,6 +441,9 @@ footer p {
   border-radius: 1rem;
   color: #99e2d0;
 }
+.menu_resto .menu_categories .menu_item:hover {
+  cursor: pointer;
+}
 .menu_resto .menu_categories .menu_item:hover .check {
   margin-right: 0;
 }
@@ -437,6 +457,30 @@ footer p {
   100% {
     transform: rotate(0deg);
   }
+}
+
+section.commande {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+section.commande button {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 32px;
+  border: none;
+  box-shadow: 2px 1px 16px -3px;
+  transition: transforme 200ms;
+  margin-top: 16px;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #000;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(225, 121, 218, 0.9));
+}
+section.commande button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
 }
 
 /*# sourceMappingURL=styles.css.map */

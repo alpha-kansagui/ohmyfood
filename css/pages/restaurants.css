@@ -1,17 +1,215 @@
-/* Error: Undefined variable.
- *    ,
- * 41 |       background-color: $couleur-tertiaire;
- *    |                         ^^^^^^^^^^^^^^^^^^
- *    '
- *   sass\pages\restaurants.scss 41:25  root stylesheet */
-
-body::before {
-  font-family: "Source Code Pro", "SF Mono", Monaco, Inconsolata, "Fira Mono",
-      "Droid Sans Mono", monospace, monospace;
-  white-space: pre;
-  display: block;
-  padding: 1em;
-  margin-bottom: 1em;
-  border-bottom: 2px solid black;
-  content: "Error: Undefined variable.\a    \2577 \a 41 \2502        background-color: $couleur-tertiaire;\d\a    \2502                          ^^^^^^^^^^^^^^^^^^\a    \2575 \a   sass\\pages\\restaurants.scss 41:25  root stylesheet";
+header::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f060";
+  left: 16px;
+  transform: translateY(50%);
+  font-size: 20px;
 }
+
+.images {
+  position: absolute;
+  width: 100%;
+  z-index: -1000;
+}
+.images img {
+  display: block;
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.restaurant {
+  margin-top: 268px;
+}
+.restaurant h2 {
+  position: relative;
+  padding: 32px 16px;
+  font-family: "shrikhand", "sans-serif";
+  background-color: #f6f6f6;
+  border-radius: 32px 32px 0 0;
+}
+.restaurant h2::before {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  right: 16px;
+  top: 50%;
+  font-size: 24px;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+}
+.restaurant h2::after {
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 400;
+  content: "\f004";
+  right: 16px;
+  top: 50%;
+  font-size: 24px;
+  transform: translateY(-50%);
+  color: inherit;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 1;
+  transition: all 200ms ease-in-out;
+  background-image: linear-gradient(to top, #9356dc, #e179da);
+  display: inline-block;
+  position: absolute;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f004";
+  right: 16px;
+  top: 50%;
+  font-size: 24px;
+  transform: translateY(-50%);
+  color: transparent;
+  background-clip: text;
+  -webkit-background-clip: text;
+  opacity: 0;
+  transition: all 200ms ease-in-out;
+}
+.restaurant h2:hover::after {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.2);
+}
+
+.resto-main {
+  padding: 0 16px;
+  background-color: #f6f6f6;
+}
+
+.menu_resto {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+.menu_resto h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  position: relative;
+}
+.menu_resto h3::after {
+  content: "";
+  position: absolute;
+  background-color: #99e2d0;
+  top: 2.5rem;
+  left: 0;
+  height: 0.25rem;
+  width: 3rem;
+}
+.menu_resto .menu_categories {
+  overflow: hidden;
+}
+.menu_resto .menu_categories .menu_item {
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 8px;
+  box-shadow: 2px 1px 8px -3px #000;
+}
+.menu_resto .menu_categories .menu_item .prix {
+  margin-left: auto;
+  font-weight: 900;
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+}
+.menu_resto .menu_categories .menu_item .menu_item_description {
+  padding: 16px;
+  overflow: hidden;
+}
+.menu_resto .menu_categories .menu_item .menu_item_description h4,
+.menu_resto .menu_categories .menu_item .menu_item_description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_resto .menu_categories .menu_item .check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 16px 16px 0;
+  background-color: aquamarine;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+.menu_resto .menu_categories .menu_item .check i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 1.5rem;
+  border-radius: 1rem;
+  color: #99e2d0;
+}
+.menu_resto .menu_categories .menu_item:hover {
+  cursor: pointer;
+}
+.menu_resto .menu_categories .menu_item:hover .check {
+  margin-right: 0;
+}
+.menu_resto .menu_categories .menu_item:hover i {
+  animation: quart-tour 0.5s ease-in-out;
+}
+@keyframes quart-tour {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+section.commande {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+}
+section.commande button {
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  padding: 16px;
+  border-radius: 32px;
+  border: none;
+  box-shadow: 2px 1px 16px -3px;
+  transition: transforme 200ms;
+  margin-top: 16px;
+  cursor: pointer;
+  box-shadow: 2px 1px 8px -3px #000;
+  background-image: linear-gradient(to top, rgba(147, 86, 220, 0.9), rgba(225, 121, 218, 0.9));
+}
+section.commande button:hover {
+  transform: scale(1.02);
+  opacity: 0.9;
+}
+
+/*# sourceMappingURL=restaurants.css.map */

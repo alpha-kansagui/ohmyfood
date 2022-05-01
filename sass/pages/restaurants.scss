@@ -1,6 +1,14 @@
+@use "../utils/variables";
 @use "../utils/mixins";
 @use "../utils/animation";
 
+header::before {
+  @include mixins.font-awesome($font-weight: 900);
+  content: "\f060";
+  left: 16px;
+  transform: translateY(50%);
+  font-size: 20px;
+}
 .images {
   position: absolute;
   width: 100%;
@@ -38,7 +46,7 @@
     &::after {
       content: "";
       position: absolute;
-      background-color: $couleur-tertiaire;
+      background-color: #99e2d0;
       top: 2.5rem;
       left: 0;
       height: 0.25rem;
@@ -88,10 +96,11 @@
           aspect-ratio: 1;
           width: 1.5rem;
           border-radius: 1rem;
-          color: $couleur-tertiaire;
+          color: #99e2d0;
         }
       }
       &:hover {
+        cursor: pointer;
         .check {
           margin-right: 0;
         }
@@ -101,5 +110,13 @@
         }
       }
     }
+  }
+}
+section.commande {
+  height: 30vh;
+  display: grid;
+  place-items: center;
+  button {
+    @include mixins.base-button;
   }
 }

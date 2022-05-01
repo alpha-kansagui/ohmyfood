@@ -19,20 +19,7 @@
     font-size: 20px;
   }
   button {
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    padding: 16px;
-    border-radius: 32px;
-    border: none;
-    box-shadow: 2px 1px 16px -3px;
-    transition: transforme 200ms;
-    margin-top: 16px;
-    @include mixins.gradient(0.9);
-  }
-  button:hover {
-    transform: scale(1.02);
-    opacity: 0.9;
+    @include mixins.base-button;
   }
 }
 /*fonctionnement*/
