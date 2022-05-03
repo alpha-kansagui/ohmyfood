@@ -2,7 +2,7 @@
 @use "../utils/mixins";
 @use "../utils/animation";
 
-header::before {
+#fleche-retour::before {
   @include mixins.font-awesome($font-weight: 900);
   content: "\f060";
   left: 16px;
@@ -53,15 +53,28 @@ header::before {
       width: 3rem;
     }
   }
+  .menu-items {
+    @media screen and (min-width: 800px) {
+      display: grid;
+      grid-template-columns: (1fr 1fr 1fr);
+    }
+  }
   .menu_categories {
     overflow: hidden;
-    .menu_item {
+  }
+  .menu_item {
+    @for $i from 1 through 3 {
+      &:nth-child(#{$i}) {
+        animation-delay: 100ms * $i;
+      }
       background-color: white;
       display: flex;
       overflow: hidden;
       border-radius: 16px;
       margin: 8px;
       @include mixins.box-shadow;
+      animation: appear 3s;
+      animation-fill-mode: both;
       .prix {
         margin-left: auto;
         font-weight: 900;

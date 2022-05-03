@@ -22,6 +22,43 @@
     @include mixins.base-button;
   }
 }
+.spinner {
+  $animation-duration: 1s;
+  $animation-count: 3;
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: desappear 500ms $animation-duration * $animation-count forwards;
+  transform-origin: top;
+  &::after {
+    content: "";
+    height: 100px;
+    width: 100px;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #ff79da;
+    border-radius: 50%;
+    animation: spin $animation-duration ease-in-out;
+    animation-iteration-count: $animation-count;
+  }
+}
+@keyframes desappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*fonctionnement*/
 .fonction {
   padding: 0 32px;
@@ -31,6 +68,11 @@
     flex-wrap: wrap;
     gap: 32px;
     padding-left: 20px;
+    display: grid;
+    gap: 32px;
+    @media screen and (min-width: 800px) {
+      grid-template-columns: (1fr 1fr);
+    }
   }
   & li {
     position: relative;
@@ -77,8 +119,10 @@
   padding-bottom: 64px;
   & .menu_cartes {
     display: grid;
-    grid-template-columns: (1, 1fr);
     gap: 32px;
+    @media screen and (min-width: 800px) {
+      grid-template-columns: (1fr 1fr);
+    }
   }
   .new {
     position: relative;

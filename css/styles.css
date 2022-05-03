@@ -1,17 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;400&family=Roboto:wght@300;400;500&family=Shrikhand&display=swap");
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
 
-/*
-.wrapper {
-  max-width: 768px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-*/
 body {
   margin: 0px;
   font-family: "Roboto", sans-serif;
@@ -84,6 +87,42 @@ a {
   opacity: 0.9;
 }
 
+.spinner {
+  position: fixed;
+  display: grid;
+  place-items: center;
+  background-color: white;
+  height: 100vh;
+  inset: 0;
+  z-index: 1;
+  opacity: 0.9;
+  animation: desappear 500ms 3s forwards;
+  transform-origin: top;
+}
+.spinner::after {
+  content: "";
+  height: 100px;
+  width: 100px;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #ff79da;
+  border-radius: 50%;
+  animation: spin 1s ease-in-out;
+  animation-iteration-count: 3;
+}
+
+@keyframes desappear {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
 /*fonctionnement*/
 .fonction {
   padding: 0 32px;
@@ -94,6 +133,13 @@ a {
   flex-wrap: wrap;
   gap: 32px;
   padding-left: 20px;
+  display: grid;
+  gap: 32px;
+}
+@media screen and (min-width: 800px) {
+  .fonction ol {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .fonction li {
   position: relative;
@@ -141,8 +187,12 @@ a {
 }
 .menu .menu_cartes {
   display: grid;
-  grid-template-columns: 1, 1fr;
   gap: 32px;
+}
+@media screen and (min-width: 800px) {
+  .menu .menu_cartes {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 .menu .new {
   position: relative;
@@ -269,7 +319,17 @@ footer p {
   line-height: 1.8em;
 }
 
-header::before {
+@keyframes appear {
+  0% {
+    transform: translateY(50%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+#fleche-retour::before {
   display: inline-block;
   position: absolute;
   font-style: normal;
@@ -394,35 +454,62 @@ header::before {
   height: 0.25rem;
   width: 3rem;
 }
+@media screen and (min-width: 800px) {
+  .menu_resto .menu-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
 .menu_resto .menu_categories {
   overflow: hidden;
 }
-.menu_resto .menu_categories .menu_item {
+.menu_resto .menu_item {
   background-color: white;
   display: flex;
   overflow: hidden;
   border-radius: 16px;
   margin: 8px;
   box-shadow: 2px 1px 8px -3px #000;
+  animation: appear 3s;
+  animation-fill-mode: both;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 8px;
+  box-shadow: 2px 1px 8px -3px #000;
+  animation: appear 3s;
+  animation-fill-mode: both;
+  background-color: white;
+  display: flex;
+  overflow: hidden;
+  border-radius: 16px;
+  margin: 8px;
+  box-shadow: 2px 1px 8px -3px #000;
+  animation: appear 3s;
+  animation-fill-mode: both;
 }
-.menu_resto .menu_categories .menu_item .prix {
+.menu_resto .menu_item:nth-child(1) {
+  animation-delay: 100ms;
+}
+.menu_resto .menu_item .prix {
   margin-left: auto;
   font-weight: 900;
   padding: 16px;
   display: flex;
   align-items: flex-end;
 }
-.menu_resto .menu_categories .menu_item .menu_item_description {
+.menu_resto .menu_item .menu_item_description {
   padding: 16px;
   overflow: hidden;
 }
-.menu_resto .menu_categories .menu_item .menu_item_description h4,
-.menu_resto .menu_categories .menu_item .menu_item_description p {
+.menu_resto .menu_item .menu_item_description h4,
+.menu_resto .menu_item .menu_item_description p {
   overflow: hidden;
   white-space: nowrap;
   text-overflow: ellipsis;
 }
-.menu_resto .menu_categories .menu_item .check {
+.menu_resto .menu_item .check {
   display: grid;
   place-items: center;
   flex-shrink: 0;
@@ -432,7 +519,7 @@ header::before {
   width: 4rem;
   transition: margin-right 0.5s;
 }
-.menu_resto .menu_categories .menu_item .check i {
+.menu_resto .menu_item .check i {
   display: grid;
   place-items: center;
   background: white;
@@ -441,13 +528,125 @@ header::before {
   border-radius: 1rem;
   color: #99e2d0;
 }
-.menu_resto .menu_categories .menu_item:hover {
+.menu_resto .menu_item:hover {
   cursor: pointer;
 }
-.menu_resto .menu_categories .menu_item:hover .check {
+.menu_resto .menu_item:hover .check {
   margin-right: 0;
 }
-.menu_resto .menu_categories .menu_item:hover i {
+.menu_resto .menu_item:hover i {
+  animation: quart-tour 0.5s ease-in-out;
+}
+@keyframes quart-tour {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.menu_resto .menu_item:nth-child(2) {
+  animation-delay: 200ms;
+}
+.menu_resto .menu_item .prix {
+  margin-left: auto;
+  font-weight: 900;
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+}
+.menu_resto .menu_item .menu_item_description {
+  padding: 16px;
+  overflow: hidden;
+}
+.menu_resto .menu_item .menu_item_description h4,
+.menu_resto .menu_item .menu_item_description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_resto .menu_item .check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 16px 16px 0;
+  background-color: aquamarine;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+.menu_resto .menu_item .check i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 1.5rem;
+  border-radius: 1rem;
+  color: #99e2d0;
+}
+.menu_resto .menu_item:hover {
+  cursor: pointer;
+}
+.menu_resto .menu_item:hover .check {
+  margin-right: 0;
+}
+.menu_resto .menu_item:hover i {
+  animation: quart-tour 0.5s ease-in-out;
+}
+@keyframes quart-tour {
+  0% {
+    transform: rotate(-270deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+.menu_resto .menu_item:nth-child(3) {
+  animation-delay: 300ms;
+}
+.menu_resto .menu_item .prix {
+  margin-left: auto;
+  font-weight: 900;
+  padding: 16px;
+  display: flex;
+  align-items: flex-end;
+}
+.menu_resto .menu_item .menu_item_description {
+  padding: 16px;
+  overflow: hidden;
+}
+.menu_resto .menu_item .menu_item_description h4,
+.menu_resto .menu_item .menu_item_description p {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.menu_resto .menu_item .check {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 0 16px 16px 0;
+  background-color: aquamarine;
+  margin-right: -4rem;
+  width: 4rem;
+  transition: margin-right 0.5s;
+}
+.menu_resto .menu_item .check i {
+  display: grid;
+  place-items: center;
+  background: white;
+  aspect-ratio: 1;
+  width: 1.5rem;
+  border-radius: 1rem;
+  color: #99e2d0;
+}
+.menu_resto .menu_item:hover {
+  cursor: pointer;
+}
+.menu_resto .menu_item:hover .check {
+  margin-right: 0;
+}
+.menu_resto .menu_item:hover i {
   animation: quart-tour 0.5s ease-in-out;
 }
 @keyframes quart-tour {
