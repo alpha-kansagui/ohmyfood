@@ -54,13 +54,23 @@ a {
   justify-content: center;
   align-items: center;
   gap: 16px;
-  background-color: arrierePlan-gris;
-  padding: 18px;
+  background-color: #eaeaea;
+  padding: 16px 0;
+}
+.localisation input {
+  border: none;
+  background-color: transparent;
+  font-weight: bold;
+  width: 25%;
+  text-overflow: ellipsis;
 }
 
 /*Section*/
 .exploration {
   text-align: center;
+  margin-bottom: 30px;
+  background-color: #f6f6f6;
+  padding: 32px 0;
 }
 .exploration h1 {
   font-size: 40px;
@@ -453,6 +463,9 @@ footer p {
   left: 0;
   height: 0.25rem;
   width: 3rem;
+}
+.menu_resto .menu-items {
+  display: grid;
 }
 @media screen and (min-width: 800px) {
   .menu_resto .menu-items {
